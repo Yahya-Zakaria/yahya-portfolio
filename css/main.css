@@ -17,7 +17,6 @@ body {
 }
 * {
   scroll-behavior: smooth;
-  transition: all 0.3s;
 }
 
 :root {
@@ -39,7 +38,7 @@ body {
   letter-spacing: 0.7px;
 }
 
-.navbar-brand{
+.navbar-brand {
   letter-spacing: 3px;
 }
 
@@ -67,28 +66,28 @@ body {
   color: black;
 }
 
-
 /* start home style */
 #homePage {
   background-image: url(../images/hero2.png);
   background-position: center;
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
   height: 100vh;
   width: 100%;
   position: relative;
+  box-shadow: -10px -20px 25px 2px rgba(0, 0, 0, 0.697) inset;
 }
-#homePage *{
+#homePage * {
   z-index: 2;
 }
-#homePage::after{
+#homePage::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.43);
+  background-color: rgba(0, 0, 0, 0.53);
   z-index: 1;
 }
 #homePage .container {
@@ -111,7 +110,7 @@ body {
   height: 350px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 40px ;
+  box-shadow: 0 0 40px;
 }
 .img-bg img {
   position: absolute;
@@ -191,6 +190,96 @@ body {
   color: white;
 }
 
+/* start skills style */
+
+#skills {
+  background: #181818;
+  background-position: center bottom;
+  background-size: cover;
+  height: fit-content;
+  position: relative;
+  color: white;
+}
+
+#skills::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(1, 105, 102, 0.3), rgba(0, 0, 0, 0.9) 80%),
+    url(../images/freepik-export-20240623225006MYXD.png);
+  backdrop-filter: blur(20px);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 1;
+}
+
+#skills * {
+  z-index: 2;
+}
+
+.knowledge {
+  position: relative;
+}
+.knowledge-list {
+  position: relative;
+}
+.knowledge-list::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+  width: 3px;
+  height: calc(100% - 14px);
+  transform: translateY(-7px);
+  background-color: #069590;
+  box-shadow: 0 0 5px 0.5px #03a29d;
+  border-radius: 3px;
+}
+.know-item {
+  padding: 10px 15px;
+  background-color: rgba(0, 255, 247, 0.09);
+  backdrop-filter: blur(5px);
+  width: fit-content;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.405);
+}
+
+.know-item::after {
+  content: "";
+  position: absolute;
+  left: -49px;
+  top: 50%;
+  background-color: #069590;
+  box-shadow: 0 0 15px 1px #03a29d;
+  width: 15px;
+  height: 15px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+.know-title {
+  display: inline-block;
+  padding: 0px 150px 10px 0;
+  letter-spacing: 2.5px;
+  border-bottom: 3px solid;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 5;
+}
+.knowledge-list .know-item p {
+  margin: 0 !important;
+  line-break: strict;
+  line-height: 1.6;
+  word-break: keep-all;
+  word-wrap: break-word;
+  word-spacing: 1.5px;
+  font-weight: 400;
+}
+
 /* bad med */
 @media screen and (max-width: 991px) {
   .navbar .navbar-nav {
@@ -198,9 +287,9 @@ body {
     gap: 0 !important;
   }
   .navbar .navbar-nav .nav-link {
-    border-radius: 3px !important;
+    border-radius: 0px !important;
     padding: 10px 0;
-    border-bottom: 1px solid #2c74b3;
+    border-bottom: 1px solid #d2d2d270;
   }
 
   .navbar-nav .nav-link:last-child {
@@ -220,7 +309,7 @@ body {
 
   #homePage {
     height: auto;
-    text-align: start !;
+    text-align: start;
   }
   #homePage .about-me-content {
     font-size: medium;
@@ -243,7 +332,7 @@ body {
     height: fit-content;
     text-align: center;
   }
-
+  
   #homePage .about-me-content {
     font-size: 19px;
     text-align: center;
@@ -268,5 +357,19 @@ body {
   }
   .img-bg img {
     width: 300px;
+  }
+  
+  .know-title {
+    padding: 0px 50px 10px 0;
+  }
+  .know-title::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    bottom: 0;
+    right: -50px;
+    background-image: url(../images/c2.png);
   }
 }
