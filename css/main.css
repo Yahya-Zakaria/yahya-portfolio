@@ -208,7 +208,10 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(1, 105, 102, 0.3), rgba(0, 0, 0, 0.9) 80%),
+  background-image: linear-gradient(
+      rgba(1, 105, 102, 0.3),
+      rgba(0, 0, 0, 0.9) 80%
+    ),
     url(../images/freepik-export-20240623225006MYXD.png);
   backdrop-filter: blur(20px);
   background-position: center center;
@@ -221,13 +224,13 @@ body {
   z-index: 2;
 }
 
-.knowledge {
+.personal {
   position: relative;
 }
-.knowledge-list {
+.personal-list {
   position: relative;
 }
-.knowledge-list::after {
+.personal-list::after {
   content: "";
   position: absolute;
   left: 5px;
@@ -261,16 +264,27 @@ body {
   transform: translateY(-50%);
   border-radius: 50%;
 }
-.know-title {
+.know-title,
+.tec-title {
   display: inline-block;
-  padding: 0px 150px 10px 0;
+  padding: 0px 80px 10px 0;
   letter-spacing: 2.5px;
   border-bottom: 3px solid;
   text-transform: uppercase;
   position: relative;
   z-index: 5;
 }
-.knowledge-list .know-item p {
+.know-title::after {
+  content: "";
+  position: absolute;
+  background-size: cover;
+  width: 150px;
+  height: 150px;
+  bottom: 0;
+  right: -50px;
+  background-image: url(../images/c2.png);
+}
+.personal-list .know-item p {
   margin: 0 !important;
   line-break: strict;
   line-height: 1.6;
@@ -279,7 +293,47 @@ body {
   word-spacing: 1.5px;
   font-weight: 400;
 }
+.tec-title {
+  padding: 0 0 10px 0;
+}
+.tec-card {
+  background-color: rgba(0, 255, 247, 0.09);
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.405);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  width: 100%;
+  height: fit-content;
+  padding: 34px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+#skills .row .col-md-7,
+#skills .row .col-md-5 {
+  padding: 20px 30px !important;
+}
 
+.progress {
+  background-color: #004b48;
+  box-shadow: 0 0 15px 1px #03a29d54, 0 0 15px 5px #000000b3 inset;
+  width: 100%;
+  height: 25px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.progress-set {
+  background-color: #000000;
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  overflow: hidden;
+  transition: width 0.5s;
+}
 /* bad med */
 @media screen and (max-width: 991px) {
   .navbar .navbar-nav {
@@ -322,6 +376,27 @@ body {
   .img-bg img {
     width: 200px !important ;
   }
+  #skills .row {
+    flex-direction: column-reverse;
+  }
+  .know-title {
+    padding: 0px 50px 10px 0;
+  }
+  .know-title::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    bottom: 0;
+    right: -50px;
+    background-image: url(../images/c2.png);
+  }
+  #skills .row .col-md-7,
+  #skills .row .col-md-5 {
+    padding: 20px 30px !important;
+    width: 100%;
+  }
 }
 
 /* mob larg */
@@ -332,7 +407,7 @@ body {
     height: fit-content;
     text-align: center;
   }
-  
+
   #homePage .about-me-content {
     font-size: 19px;
     text-align: center;
@@ -358,7 +433,7 @@ body {
   .img-bg img {
     width: 300px;
   }
-  
+
   .know-title {
     padding: 0px 50px 10px 0;
   }
