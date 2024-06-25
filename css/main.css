@@ -229,18 +229,20 @@ body {
 }
 .personal-list {
   position: relative;
+  
 }
-.personal-list::after {
+.list-line {
   content: "";
   position: absolute;
   left: 5px;
-  bottom: 0;
+  top: 10px;
   width: 3px;
-  height: calc(100% - 14px);
+  height: 0;
   transform: translateY(-7px);
   background-color: #069590;
   box-shadow: 0 0 5px 0.5px #03a29d;
   border-radius: 3px;
+  transition: all 2s .5s;
 }
 .know-item {
   padding: 10px 15px;
@@ -250,6 +252,21 @@ body {
   border-radius: 10px;
   position: relative;
   box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.405);
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.know-item:nth-child(2){
+  transition: all 1s .7s;
+}
+.know-item:nth-child(3){
+  transition: all 1s 1s;
+}
+.know-item:nth-child(4){
+  transition: all 1s 1.3s;
+}
+.know-item:nth-child(5){
+  transition: all 1s 1.5s;
 }
 
 .know-item::after {
@@ -307,6 +324,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 45px;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 1s .2s , opacity 1s ;
 }
 #skills .row .col-md-7,
 #skills .row .col-md-5 {
@@ -323,7 +343,8 @@ body {
   border-radius: 20px;
 }
 .progress-set {
-  background-color: #000000;
+  background-color: #024b61;
+  box-shadow: 0 0 15px 1px #007497 inset;
   width: 0%;
   height: 100%;
   position: absolute;
@@ -332,10 +353,10 @@ body {
   align-items: center;
   font-size: 12px;
   overflow: hidden;
-  transition: width 0.5s;
+  transition: width 0.5s 1.5s;
 }
 /* bad med */
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
   .navbar .navbar-nav {
     padding: 25px 0 0 0;
     gap: 0 !important;
